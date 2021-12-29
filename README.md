@@ -10,11 +10,10 @@
 | family_name_kana   | string     | null: false                    |
 | first_name_kana    | string     | null: false                    |
 | birth_day          | date       | null: false                    |
-| user               | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :items
-- has_many :purchase
+- has_many :purchases
 
 ## itemsテーブル
 | Column                 | Type          | Options                        |
@@ -27,7 +26,7 @@
 | shipping_area_id       | integer       | null: false                    |
 | shipping_fee_id        | integer       | null: false                    |
 | shipping_days_id       | integer       | null: false                    |
-| seller_user              | references    | null: false, foreign_key: true |
+| user                   | references    | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -37,8 +36,8 @@
 ## purchasesテーブル
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| bought_user  | references | null: false, foreign_key: true |
-| sold_item    | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
