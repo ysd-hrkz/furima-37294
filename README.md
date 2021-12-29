@@ -14,6 +14,7 @@
 ### Association
 - has_many :items
 - has_many :purchases
+- has_one :shipping
 
 ## itemsテーブル
 | Column                 | Type          | Options                        |
@@ -30,8 +31,6 @@
 
 ### Association
 - belongs_to :user
-- has_one :purchase
-- has_one :shipping
 
 ## purchasesテーブル
 | Column       | Type       | Options                        |
@@ -41,7 +40,7 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :item
+- has_many :shipping
 
 ## shippingsテーブル
 | Column              | Type       | Options                        |
@@ -55,5 +54,6 @@
 | user                | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :item
+- belongs_to :purchase
+- belongs_to :user
 
