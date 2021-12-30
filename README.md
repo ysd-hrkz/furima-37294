@@ -14,7 +14,6 @@
 ### Association
 - has_many :items
 - has_many :purchases
-- has_one :shipping
 
 ## itemsテーブル
 | Column            | Type          | Options                        |
