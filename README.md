@@ -17,20 +17,21 @@
 - has_one :shipping
 
 ## itemsテーブル
-| Column                 | Type          | Options                        |
-| ---------------------- | ------------- | ------------------------------ |
-| name                   | string        | null: false                    |
-| item_price             | integer       | null: false                    |
-| item_description       | text          | null: false                    |
-| item_condition_id      | integer       | null: false                    |
-| item_category_id       | integer       | null: false                    |
-| shipping_area_id       | integer       | null: false                    |
-| shipping_fee_id        | integer       | null: false                    |
-| shipping_days_id       | integer       | null: false                    |
-| user                   | references    | null: false, foreign_key: true |
+| Column            | Type          | Options                        |
+| ----------------- | ------------- | ------------------------------ |
+| name              | string        | null: false                    |
+| price             | integer       | null: false                    |
+| description       | text          | null: false                    |
+| condition_id      | integer       | null: false                    |
+| category_id       | integer       | null: false                    |
+| shipping_area_id  | integer       | null: false                    |
+| shipping_fee_id   | integer       | null: false                    |
+| shipping_days_id  | integer       | null: false                    |
+| user              | references    | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
+- has_one :purchase
 
 ## purchasesテーブル
 | Column       | Type       | Options                        |
@@ -40,7 +41,9 @@
 
 ### Association
 - belongs_to :user
-- has_many :shipping
+- belongs_to :item
+- has_one :shipping
+
 
 ## shippingsテーブル
 | Column              | Type       | Options                        |
@@ -51,9 +54,7 @@
 | address             | string     | null: false                    |
 | building_name       | string     |                                |
 | phone_num           | string     | null: false                    |
-| user                | references | null: false, foreign_key: true |
+| purchase            | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :purchase
-- belongs_to :user
-

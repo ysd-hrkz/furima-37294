@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="t1ATqqz8xLLmKU7IZKuX" name="ページ1">
-        <mxGraphModel dx="1573" dy="907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+        <mxGraphModel dx="997" dy="907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -103,11 +103,14 @@
                 <mxCell id="81" value="&lt;span&gt;null: false&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;" vertex="1" parent="78">
                     <mxGeometry x="199" width="151" height="31" as="geometry"/>
                 </mxCell>
-                <mxCell id="181" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.59;entryY=1.075;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERmany;startFill=0;endArrow=ERone;endFill=0;startSize=10;endSize=10;sourcePerimeterSpacing=10;targetPerimeterSpacing=10;strokeWidth=3;" edge="1" parent="1" source="29" target="78">
+                <mxCell id="186" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;endArrow=ERone;endFill=0;startSize=10;endSize=10;sourcePerimeterSpacing=10;targetPerimeterSpacing=10;strokeWidth=3;" edge="1" parent="1" source="29" target="78">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="188" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.524;entryY=0.988;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;startSize=10;endSize=10;sourcePerimeterSpacing=10;targetPerimeterSpacing=10;strokeWidth=3;" edge="1" parent="1" source="29" target="51">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="29" value="purchasesテーブル" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;pointerEvents=1;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="630" width="430" height="94" as="geometry"/>
+                    <mxGeometry x="710" y="620" width="430" height="94" as="geometry"/>
                 </mxCell>
                 <mxCell id="146" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="29">
                     <mxGeometry y="30" width="430" height="32" as="geometry"/>
@@ -245,7 +248,7 @@
                     <mxGeometry x="267" width="183" height="28" as="geometry"/>
                 </mxCell>
                 <mxCell id="55" value="shippingsテーブル" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;pointerEvents=1;" vertex="1" parent="1">
-                    <mxGeometry x="710" y="540" width="410" height="190" as="geometry"/>
+                    <mxGeometry x="50" y="530" width="410" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="56" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="55">
                     <mxGeometry y="30" width="410" height="22" as="geometry"/>
@@ -334,10 +337,7 @@
                 <mxCell id="180" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;startSize=10;endSize=10;sourcePerimeterSpacing=10;targetPerimeterSpacing=10;strokeWidth=3;" edge="1" parent="1" source="34" target="100">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="184" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;startSize=10;endSize=10;sourcePerimeterSpacing=10;targetPerimeterSpacing=10;strokeWidth=3;" edge="1" parent="1" source="60" target="146">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="185" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.194;entryY=-0.016;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;startSize=10;endSize=10;sourcePerimeterSpacing=10;targetPerimeterSpacing=10;strokeWidth=3;" edge="1" parent="1" source="78" target="55">
+                <mxCell id="189" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;startSize=10;endSize=10;sourcePerimeterSpacing=10;targetPerimeterSpacing=10;strokeWidth=3;" edge="1" parent="1" source="60" target="146">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>
