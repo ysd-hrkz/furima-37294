@@ -20,7 +20,8 @@ class Item < ApplicationRecord
     validates :shipping_fee_id
     validates :shipping_area_id
     validates :shipping_days_id
-    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 },format: { with: /\A[0-9]+\z/}
+    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
+                      format: { with: /\A[0-9]+\z/ }
   end
 
   with_options numericality: { other_than: 1 } do
