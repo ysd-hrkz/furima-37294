@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   before do
+    @user = FactoryBot.create(:user)
     @item = FactoryBot.build(:item)
   end
 
@@ -45,6 +46,11 @@ RSpec.describe Item, type: :model do
     end
 
     context '商品が出品できないとき' do
+      it 'userが紐づいていなければ出品できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("User must exist")
+      end
       it '商品画像が空では登録できない' do
         @item.image = nil
         @item.valid?
@@ -94,11 +100,6 @@ RSpec.describe Item, type: :model do
         @item.shipping_days_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Shipping days must be other than 1')
-      end
-      it '販売価格が空だと登録できない' do
-        @item.price = ''
-        @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it '販売価格が300円未満だと登録できない' do
         @item.price = '299'
