@@ -1,4 +1,4 @@
-class PurchaseShipping
+class OrderShipping
   include ActiveModel::Model
   attr_accessor :user_id, :item_id, :post_code, :shipping_area_id, :city, :address, :building_name, :phone_num, :token
 
@@ -15,7 +15,7 @@ class PurchaseShipping
   end
 
   def save
-    purchase = Purchase.create(user_id: user_id, item_id: item_id)
+    order = Order.create(user_id: user_id, item_id: item_id)
     Shipping.create
     (post_code: post_code, shipping_area_id: shipping_area_id,
      city: city, address: address, building_name: building_name, phone_num: phone_num, purchase_id: purchase.id)
