@@ -60,7 +60,7 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Post code can't be blank")
       end
-      it '郵便番号が3桁ハイフン4桁かつ半角数値の時保存できない' do
+      it '郵便番号が3桁ハイフン4桁かつ半角数値でない時保存できない' do
         @order_shipping.post_code = '１２ー３４５'
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Post code is invalid. Include hyphen(-)")
