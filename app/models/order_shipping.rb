@@ -10,6 +10,7 @@ class OrderShipping
     validates :city
     validates :address
     validates :phone_num, format: {with: /\A[0-9]{10,11}\z/, message: "Input only number"}
+    validates :token
   end
 
   def save
