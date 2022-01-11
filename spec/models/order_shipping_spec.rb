@@ -43,7 +43,7 @@ RSpec.describe OrderShipping, type: :model do
         expect(@order_shipping).to be_valid
       end
       it 'クレジットカード情報が空でなければ登録できる' do
-        @order_shipping.token = "tok_abcdefghijk00000000000000000"
+        @order_shipping.token = 'tok_abcdefghijk00000000000000000'
         expect(@order_shipping).to be_valid
       end
     end
@@ -67,22 +67,22 @@ RSpec.describe OrderShipping, type: :model do
       it '郵便番号が3桁ハイフン4桁かつ半角数値でない時保存できない' do
         @order_shipping.post_code = '１２ー３４５'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Post code is invalid. Include hyphen(-)")
+        expect(@order_shipping.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
       it '都道府県が空だと保存できない' do
         @order_shipping.shipping_area_id = ''
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Shipping area Select")
+        expect(@order_shipping.errors.full_messages).to include('Shipping area Select')
       end
       it '都道府県が空だと保存できない' do
         @order_shipping.shipping_area_id = ''
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Shipping area Select")
+        expect(@order_shipping.errors.full_messages).to include('Shipping area Select')
       end
       it '都道府県が「---」だと保存できない' do
         @order_shipping.shipping_area_id = 1
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Shipping area Select")
+        expect(@order_shipping.errors.full_messages).to include('Shipping area Select')
       end
       it '市区町村が空だと保存できない' do
         @order_shipping.city = ''
@@ -97,7 +97,7 @@ RSpec.describe OrderShipping, type: :model do
       it '都道府県が空だと保存できない' do
         @order_shipping.shipping_area_id = ''
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Shipping area Select")
+        expect(@order_shipping.errors.full_messages).to include('Shipping area Select')
       end
       it '電話番号が空だと保存できない' do
         @order_shipping.phone_num = ''
@@ -107,7 +107,7 @@ RSpec.describe OrderShipping, type: :model do
       it '電話番号が10桁以上11桁以内の半角数値でないとき保存できない' do
         @order_shipping.phone_num = '１１１１１１１１１'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Phone num Input only number")
+        expect(@order_shipping.errors.full_messages).to include('Phone num Input only number')
       end
       it 'クレジットカード情報が空だと保存できない' do
         @order_shipping.token = ''
