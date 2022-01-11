@@ -13,7 +13,7 @@
 
 ### Association
 - has_many :items
-- has_many :purchases
+- has_many :orders
 
 ## itemsテーブル
 | Column            | Type          | Options                        |
@@ -30,7 +30,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :purchase
+- has_one :order
 
 ## ordersテーブル
 | Column       | Type       | Options                        |
