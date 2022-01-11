@@ -104,8 +104,18 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Phone num can't be blank")
       end
-      it '電話番号が10桁以上11桁以内の半角数値でないとき保存できない' do
+      it '電話番号が半角数値でないとき保存できない' do
         @order_shipping.phone_num = '１１１１１１１１１'
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include('Phone num Input only number')
+      end
+      it '電話番号が9桁以下のとき保存できない' do
+        @order_shipping.phone_num = '111111111'
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include('Phone num Input only number')
+      end
+      it '電話番号が12桁以上のとき保存できない' do
+        @order_shipping.phone_num = '111111111111'
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include('Phone num Input only number')
       end
