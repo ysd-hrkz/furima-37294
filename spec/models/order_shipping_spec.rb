@@ -42,6 +42,10 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.phone_num = '0312345678'
         expect(@order_shipping).to be_valid
       end
+      it 'クレジットカード情報が空でなければ登録できる' do
+        @order_shipping.token = "tok_abcdefghijk00000000000000000"
+        expect(@order_shipping).to be_valid
+      end
     end
 
     context '配送先情報の保存ができない時' do
@@ -104,6 +108,11 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.phone_num = '１１１１１１１１１'
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Phone num Input only number")
+      end
+      it 'クレジットカード情報が空だと保存できない' do
+        @order_shipping.token = ''
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
