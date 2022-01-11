@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   def create
     @order_shipping = OrderShipping.new(order_params)
     if @order_shipping.valid?
+      pay_item
       @order_shipping.save
       return redirect_to root_path
     else
@@ -24,4 +25,12 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  def pay_item
+    Payjp.api_key = "sk_test_aecf4495a722d6041c3c03cc"
+      Payjp::Charge.create(
+        amount: @item.price,
+        card: order_params[:token],
+        currency: 'jpy'
+      )
+  end
 end
