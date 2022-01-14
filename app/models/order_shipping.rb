@@ -5,11 +5,11 @@ class OrderShipping
   with_options presence: true do
     validates :user_id
     validates :item_id
-    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
-    validates :shipping_area_id, numericality: { other_than: 1, message: 'Select' }
+    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'は半角数値でハイフンを含めてください' }
+    validates :shipping_area_id, numericality: { other_than: 1, message: 'は「---」以外を選択してください' }
     validates :city
     validates :address
-    validates :phone_num, format: { with: /\A[0-9]{10,11}\z/, message: 'Input only number' }
+    validates :phone_num, format: { with: /\A[0-9]{10,11}\z/, message: 'は半角数値で入力してください' }
     validates :token
   end
 

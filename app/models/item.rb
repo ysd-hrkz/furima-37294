@@ -25,7 +25,7 @@ class Item < ApplicationRecord
                       format: { with: /\A[0-9]+\z/ }
   end
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1 , message: '「---」以外を選択してください' }do
     validates :condition_id
     validates :category_id
     validates :shipping_area_id
