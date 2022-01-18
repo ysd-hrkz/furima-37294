@@ -14,12 +14,13 @@
       <div class="weight-bold-text">
         商品画像
         <span class="indispensable">必須</span>
+      <div id="previews"></div>
       </div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"item-image" , size: "40x20"%>
       </div>
     </div>
     <%# /商品画像 %>
