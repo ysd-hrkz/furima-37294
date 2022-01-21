@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const previewList = document.getElementById('previews');
   if (!postForm) return null;
 
-  const fileField = document.querySelector('input[type="file"][name="item[image]"]');
+  const fileField = document.querySelector('input[type="file"][name="item_form[image]"]');
   fileField.addEventListener('change', function(e){
     const alreadyPreview = document.querySelector('.preview');
     if (alreadyPreview) {
