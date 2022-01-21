@@ -12,24 +12,6 @@ class Item < ApplicationRecord
   belongs_to :shipping_fee
   belongs_to :shipping_days
 
-  with_options presence: true do
-    validates :image
-    validates :name
-    validates :description
-    validates :category_id
-    validates :condition
-    validates :shipping_fee_id
-    validates :shipping_area_id
-    validates :shipping_days_id
-    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
-                      format: { with: /\A[0-9]+\z/ }
-  end
-
-  with_options numericality: { other_than: 1 , message: 'は、「---」以外を選択してください' }do
-    validates :condition_id
-    validates :category_id
-    validates :shipping_area_id
-    validates :shipping_fee_id
-    validates :shipping_days_id
-  end
+  has_many :item_tag_relations
+  has_many :tags, through: :item_tag_relations 
 end
