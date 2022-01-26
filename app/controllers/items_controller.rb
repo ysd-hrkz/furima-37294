@@ -52,9 +52,13 @@ class ItemsController < ApplicationController
   end
 
   def search
-    return nil if params[:keyword] == ""
-    tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"])
-    render json:{ keyword: tag }
+    if params[:q]&.dig(:name)
+      squished_keywords = params[:q][:name].squish
+      params[:q][:name_cont_any] = squished_keywords.split(" ")
+    end
+    @q = Item.ransack(params[:q])
+    @items = @q.result
+
   end
   
   private
