@@ -31,6 +31,8 @@
 ### Association
 - belongs_to :user
 - has_one :order
+- has_many :item_tag_relations
+- has_many :tags, through: :item_tag_relations , dependent: :destroy
 
 ## ordersテーブル
 | Column       | Type       | Options                        |
@@ -57,3 +59,22 @@
 
 ### Association
 - belongs_to :order
+
+## tagsテーブル
+| Column   | Type   | Options                       |
+| -------- | ------ | ----------------------------- |
+| tag_name | string | null: false, uniqueness: true |
+
+### Association
+- has_many :item_tag_relations
+- has_many :items, through: :item_tag_relations
+
+## item_tag_relationsテーブル
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| item   | references | foreign_key: true |
+| tag    | references | foreign_key: true |
+
+### Association
+- belongs_to :item
+- belongs_to :tag
